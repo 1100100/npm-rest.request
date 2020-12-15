@@ -1,2 +1,2 @@
-# npm-rest.request
+# rest.request
  
