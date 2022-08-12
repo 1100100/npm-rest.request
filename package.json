@@ -1,6 +1,6 @@
 {
   "name": "@g1100100/rest.request",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
   "author": "OWEN",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.0"
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "assert": "^2.0.0"
