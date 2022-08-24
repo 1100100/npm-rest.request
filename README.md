@@ -4,13 +4,13 @@
 Add .env.dev file
 ```
 NODE_ENV = 'development'
-VUE_APP_API_BASE_URL = 'development domain'
+VITE_APP_API_BASE_URL = 'development domain'
 ```
 
 Add .env.prod file
 ```
 NODE_ENV = 'production'
-VUE_APP_API_BASE_URL = 'production domain'
+VITE_APP_API_BASE_URL = 'production domain'
 ```
 
 ## Usage
