@@ -1,11 +1,11 @@
 {
-  "name": "@g1100100/rest.request.vite",
+  "name": "@zeelyn/rest.request.vite",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/1100100/rest.request"
+    "url": "https://github.com/zeelyn/rest.request"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
