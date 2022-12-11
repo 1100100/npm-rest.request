@@ -10,7 +10,7 @@ npm install @zeelyn/http
 
 ```javascript
 import http from "@zeelyn/http";
-request.defaults((config) => {
+http.defaults((config) => {
             config.baseURL = "https://www.google.com";
             config.$on_before_request = (options) => {
                 options.headers["Authorization"] = "Bearer " + localStorage.getItem("access_token");
@@ -22,7 +22,7 @@ request.defaults((config) => {
                 console.log("finally exec");
             };
             config.$error_network=(err)=>{
-                console.error("error network", err);
+                console.error("network error ", err);
             }
         });
 ```
@@ -31,7 +31,7 @@ request.defaults((config) => {
 
 ```javascript
 
-request.get("/api/test",{})
+http.get("/api/test",{})
     .then((res) => {
         console.log("ok=>", res.data);
     })
