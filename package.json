@@ -1,6 +1,6 @@
 {
-  "name": "@zeelyn/rest.request",
-  "version": "2.0.0",
+  "name": "@zeelyn/http",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
   "author": "OWEN",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^1.2.1"
   },
   "devDependencies": {
     "assert": "^2.0.0"

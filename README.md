@@ -1,50 +1,42 @@
-# rest.request
- 
-## Configuration
-Add .env.dev file
-```
-NODE_ENV = 'development'
-VUE_APP_API_BASE_URL = 'development domain'
+# @zeelyn/http
+
+## Project setup
+
+```ps1
+npm install @zeelyn/http
 ```
 
-Add .env.prod file
-```
-NODE_ENV = 'production'
-VUE_APP_API_BASE_URL = 'production domain'
-```
+### Global configuration
 
-## Usage
-### 1.Modify main.js
 ```javascript
-import request from "@g1100100/rest.request"
-Vue.prototype.$http = request;
+import http from "@zeelyn/http";
+request.defaults((config) => {
+            config.baseURL = "https://www.google.com";
+            config.$on_before_request = (options) => {
+                options.headers["Authorization"] = "Bearer " + localStorage.getItem("access_token");
+            };
+            config.$401 = () => {
+                console.log("Request failed with status code 401");
+            };
+            config.$finally = () => {
+                console.log("finally exec");
+            };
+            config.$error_network=(err)=>{
+                console.error("error network", err);
+            }
+        });
 ```
 
-### 2.Configure default options
+### Request url
+
 ```javascript
-request.defaults({
 
-})
+request.get("/api/test",{})
+    .then((res) => {
+        console.log("ok=>", res.data);
+    })
+    .catch((err) => {
+        console.error(err);
+    });
 
 ```
-
-### 3.Request api
-```javascript
-this.$http.post("url",{
-    data:{
-        name:"test"
-    }
-}).then(res=>{
-    console.inf(res.data);
-});
-```
-
-## Options
-|Option|Type|Description|
-|--|--|--|
-|$400|function|Called when the response status code is 400|
-|$401|function|Called when the response status code is 401|
-|$403|function|Called when the response status code is 403|
-|$404|function|Called when the response status code is 404|
-|$catch|function|Called when the response status code is not in the above list|
-|$finally|function|No matter what the response result is, it will be called|

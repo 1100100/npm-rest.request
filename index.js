@@ -1,2 +1,2 @@
-import request from "./lib/request"
-export default request
+import http from "./lib/http";
+export default http;
